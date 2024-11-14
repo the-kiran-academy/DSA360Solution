@@ -15,7 +15,7 @@ public class NotBeforeCurrentDateValidator implements ConstraintValidator<NotBef
     @Override
     public boolean isValid(Date date, ConstraintValidatorContext context) {
         // Check if the date is not before the current date
-    	var currentDate = LocalDate.now();
+    	LocalDate currentDate = LocalDate.now();
     	return date == null || !date.toLocalDate().isBefore(currentDate);
     }
 }
